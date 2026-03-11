@@ -3,7 +3,6 @@ import { useState, useEffect, useRef } from "react";
 // In App.jsx, change:
 import BlogsPage from "./pages/BlogsPage";   // adjust path as needed
 
-// And in renderPage():
 /* ─────────────────────────────────────────────
    GLOBAL STYLES injected via <style> tag
 ───────────────────────────────────────────── */
@@ -570,9 +569,8 @@ const IMAGES = {
   heroDashboard: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80",
   aboutStory: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&q=80",
   seoDashboard: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80",
-  ppcDashboard: "https://images.unsplash.com/photo-1611926653458-09294b3142bf?w=800&q=80",
-  influencer: "https://images.unsplash.com/photo-1607703703674-df96af81dffa?w=800&q=80",
-  productMktg: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=800&q=80",
+  performanceDashboard: "https://images.unsplash.com/photo-1611926653458-09294b3142bf?w=800&q=80",
+  creators: "https://images.unsplash.com/photo-1607703703674-df96af81dffa?w=800&q=80",
   socialMedia: "https://images.unsplash.com/photo-1611162616475-46b635cb6868?w=800&q=80",
   mapOffice: "https://images.unsplash.com/photo-1529400971008-f566de0e6dfc?w=800&q=80",
   blog1: "https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?w=600&q=80",
@@ -594,9 +592,8 @@ const Icon = ({ name, size = 20, color = "currentColor" }) => {
     menu: <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth="2" strokeLinecap="round"><line x1="3" y1="6" x2="21" y2="6" /><line x1="3" y1="12" x2="21" y2="12" /><line x1="3" y1="18" x2="21" y2="18" /></svg>,
     close: <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth="2" strokeLinecap="round"><line x1="18" y1="6" x2="6" y2="18" /><line x1="6" y1="6" x2="18" y2="18" /></svg>,
     seo: <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><circle cx="11" cy="11" r="8" /><line x1="21" y1="21" x2="16.65" y2="16.65" /><line x1="11" y1="8" x2="11" y2="14" /><line x1="8" y1="11" x2="14" y2="11" /></svg>,
-    ppc: <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17" /><polyline points="16 7 22 7 22 13" /></svg>,
-    influencer: <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" /><circle cx="9" cy="7" r="4" /><path d="M23 21v-2a4 4 0 0 0-3-3.87" /><path d="M16 3.13a4 4 0 0 1 0 7.75" /></svg>,
-    product: <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="7" width="20" height="14" rx="2" /><path d="M16 3H8L6 7h12z" /></svg>,
+    performance: <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17" /><polyline points="16 7 22 7 22 13" /></svg>,
+    creators: <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" /><circle cx="9" cy="7" r="4" /><path d="M23 21v-2a4 4 0 0 0-3-3.87" /><path d="M16 3.13a4 4 0 0 1 0 7.75" /></svg>,
     social: <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><circle cx="18" cy="5" r="3" /><circle cx="6" cy="12" r="3" /><circle cx="18" cy="19" r="3" /><line x1="8.59" y1="13.51" x2="15.42" y2="17.49" /><line x1="15.41" y1="6.51" x2="8.59" y2="10.49" /></svg>,
     mail: <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" /><polyline points="22,6 12,13 2,6" /></svg>,
     phone: <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.25h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.68a16 16 0 0 0 6 6l.91-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.7 16z" /></svg>,
@@ -605,6 +602,55 @@ const Icon = ({ name, size = 20, color = "currentColor" }) => {
     clock: <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth="1.8" strokeLinecap="round"><circle cx="12" cy="12" r="10" /><polyline points="12 6 12 12 16 14" /></svg>,
   };
   return icons[name] || null;
+};
+
+/* ─────────────────────────────────────────────
+   WHATSAPP WIDGET
+───────────────────────────────────────────── */
+const WhatsAppWidget = () => {
+  // Enter the American Hairline WhatsApp number here. 
+  // IMPORTANT: Only include the country code and the number. Do not use '+', '-', '(', ')', or spaces.
+  // Example for India: "919876543210"
+  const whatsappNumber = "";
+  const message = "Hi, I'd like to know more about your services.";
+
+  return (
+    <a
+      href={`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`}
+      target="_blank"
+      rel="noopener noreferrer"
+      style={{
+        position: "fixed",
+        bottom: "30px",
+        right: "30px",
+        width: "60px",
+        height: "60px",
+        backgroundColor: "#25D366",
+        color: "white",
+        borderRadius: "50%",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        boxShadow: "0 4px 14px rgba(0, 0, 0, 0.15)",
+        zIndex: 9999, // Ensures it sits above everything, including navbars
+        transition: "transform 0.3s ease, box-shadow 0.3s ease",
+        cursor: "pointer",
+      }}
+      onMouseEnter={(e) => {
+        e.currentTarget.style.transform = "scale(1.1) translateY(-4px)";
+        e.currentTarget.style.boxShadow = "0 8px 24px rgba(37, 211, 102, 0.4)";
+      }}
+      onMouseLeave={(e) => {
+        e.currentTarget.style.transform = "scale(1) translateY(0)";
+        e.currentTarget.style.boxShadow = "0 4px 14px rgba(0, 0, 0, 0.15)";
+      }}
+      aria-label="Chat with us on WhatsApp"
+    >
+      <svg viewBox="0 0 24 24" width="34" height="34" fill="currentColor">
+        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z" />
+      </svg>
+    </a>
+  );
 };
 
 /* ─────────────────────────────────────────────
@@ -766,9 +812,8 @@ const HomePage = ({ setPage }) => {
 
   const services = [
     { icon: "seo", label: "SEO", color: "#0057FF" },
-    { icon: "ppc", label: "PPC", color: "#FF6B1A" },
-    { icon: "influencer", label: "Influencer", color: "#7C3AED" },
-    { icon: "product", label: "Product Mktg", color: "#059669" },
+    { icon: "performance", label: "Performance", color: "#FF6B1A" },
+    { icon: "creators", label: "Creators", color: "#7C3AED" },
     { icon: "social", label: "Social Media", color: "#DB2777" },
   ];
 
@@ -821,7 +866,7 @@ const HomePage = ({ setPage }) => {
                   marginBottom: "2.2rem", maxWidth: 480, fontWeight: 400,
                   opacity: heroVisible ? undefined : 0,
                 }}>
-                Ydigital is a full-service digital marketing firm that turns clicks into customers. From SEO to influencer campaigns — we engineer growth that compounds.
+                Ydigital is a full-service digital marketing firm that turns clicks into customers. From SEO to Content Creation campaigns — we engineer growth that compounds.
               </p>
 
               <div className={`hero-cta-row ${heroVisible ? "animate-fade-up delay-3" : ""}`}
@@ -875,7 +920,7 @@ const HomePage = ({ setPage }) => {
                   display: "flex", alignItems: "center", gap: 10,
                 }}>
                   <div style={{ width: 34, height: 34, borderRadius: 8, background: "#e8f0ff", display: "flex", alignItems: "center", justifyContent: "center" }}>
-                    <Icon name="ppc" size={16} color="var(--blue)" />
+                    <Icon name="performance" size={16} color="var(--blue)" />
                   </div>
                   <div>
                     <div style={{ fontFamily: "var(--font-display)", fontWeight: 900, fontSize: "1.05rem", color: "var(--blue)" }}>+247%</div>
@@ -891,7 +936,7 @@ const HomePage = ({ setPage }) => {
                   display: "flex", alignItems: "center", gap: 10,
                 }}>
                   <div style={{ width: 34, height: 34, borderRadius: 8, background: "#fff3ee", display: "flex", alignItems: "center", justifyContent: "center" }}>
-                    <Icon name="influencer" size={16} color="var(--orange)" />
+                    <Icon name="creators" size={16} color="var(--orange)" />
                   </div>
                   <div>
                     <div style={{ fontFamily: "var(--font-display)", fontWeight: 900, fontSize: "1.05rem", color: "var(--orange)" }}>5M+</div>
@@ -1009,9 +1054,8 @@ const HomePage = ({ setPage }) => {
           <div className="service-cards-grid">
             {[
               { icon: "seo", title: "SEO", desc: "Rank higher, get found faster.", color: "#4D8FFF" },
-              { icon: "ppc", title: "PPC Management", desc: "Every click, maximised.", color: "#FF8C4D" },
-              { icon: "influencer", title: "Influencer Mktg", desc: "Scale reach authentically.", color: "#A78BFA" },
-              { icon: "product", title: "Product Marketing", desc: "Launch with precision.", color: "#34D399" },
+              { icon: "performance", title: "Performance Marketing", desc: "Every click, maximised.", color: "#FF8C4D" },
+              { icon: "creators", title: "Content Creation for Creators Mktg", desc: "Scale reach authentically.", color: "#A78BFA" },
               { icon: "social", title: "Social Media", desc: "Build loyal communities.", color: "#F472B6" },
             ].map((s, i) => (
               <div key={i} className="card" onClick={() => setPage("Services")} style={{
@@ -1044,7 +1088,7 @@ const HomePage = ({ setPage }) => {
           <div className="testimonials-grid">
             {[
               { text: "Ydigital transformed our online presence. Our organic traffic is up 300% in just 6 months.", name: "Vatsal Shah", role: "CEO, TechStartup", rating: 5 },
-              { text: "The PPC campaigns they ran had the best ROI we've ever seen. Truly data-driven experts.", name: "Priya Mehta", role: "Marketing Director", rating: 5 },
+              { text: "The Performance Marketing campaigns they ran had the best ROI we've ever seen. Truly data-driven experts.", name: "Priya Mehta", role: "Marketing Director", rating: 5 },
               { text: "Young, dynamic, and incredibly competent. They feel like an extension of our own team.", name: "Amit Joshi", role: "Founder, BrandLab", rating: 5 },
             ].map((t, i) => (
               <div key={i} className="card" style={{ padding: "1.8rem" }}>
@@ -1105,31 +1149,22 @@ const services = [
     img: IMAGES.seoDashboard, imgAlt: "SEO Analytics Dashboard",
   },
   {
-    id: "ppc", icon: "ppc", title: "PPC Management",
+    id: "performance", icon: "performance", title: "Performance Marketing",
     color: "#FF6B1A", bg: "linear-gradient(135deg, #fff3ee, #fff8f5)",
     tagline: "Every Rupee Spent, Purposefully.",
     desc: "We manage Google Ads, Meta Ads, and LinkedIn campaigns with laser precision. From audience segmentation to A/B testing ad creatives — we squeeze maximum ROI from every campaign rupee.",
     bullets: ["Google Ads & Meta Ads management", "Landing page conversion optimisation", "A/B testing & ad creative strategy", "Real-time bid management", "Detailed ROAS reporting"],
     metric: "4.8x", metricLabel: "Average return on ad spend",
-    img: IMAGES.ppcDashboard, imgAlt: "PPC Campaign Analytics",
+    img: IMAGES.performanceDashboard, imgAlt: "Performance Marketing Analytics",
   },
   {
-    id: "influencer", icon: "influencer", title: "Influencer Marketing",
+    id: "creators", icon: "creators", title: "Content Creation for Creators Marketing",
     color: "#7C3AED", bg: "linear-gradient(135deg, #f3eeff, #f9f5ff)",
     tagline: "Authentic Voices, Massive Reach.",
-    desc: "We connect brands with the right creators — from mega influencers to micro-niche communities. Our campaigns are built on genuine alignment between brand values and creator audiences, driving real engagement not just impressions.",
-    bullets: ["Influencer discovery & vetting", "Campaign strategy & briefing", "Content review & brand alignment", "Performance tracking & reporting", "Long-term creator relationships"],
+    desc: "We connect brands with the right creators — from mega creators to micro-niche communities. Our campaigns are built on genuine alignment between brand values and creator audiences, driving real engagement not just impressions.",
+    bullets: ["Creators discovery & vetting", "Campaign strategy & briefing", "Content review & brand alignment", "Performance tracking & reporting", "Long-term creator relationships"],
     metric: "5M+", metricLabel: "Combined reach across campaigns",
-    img: IMAGES.influencer, imgAlt: "Influencer Campaign",
-  },
-  {
-    id: "product", icon: "product", title: "Product Marketing",
-    color: "#059669", bg: "linear-gradient(135deg, #ecfdf5, #f0fdf4)",
-    tagline: "Launch Loud. Position Right.",
-    desc: "From go-to-market strategy to product launch campaigns, we ensure your product reaches the right audience with the right message at the right time. We bridge product and marketing to create positioning that sticks.",
-    bullets: ["Go-to-market (GTM) strategy", "Competitive positioning & messaging", "Launch campaign execution", "Product storytelling & content", "Customer journey mapping"],
-    metric: "85%", metricLabel: "Of launches hit target in Month 1",
-    img: IMAGES.productMktg, imgAlt: "Product Marketing Strategy",
+    img: IMAGES.creators, imgAlt: "Content Creation for Creators Campaign",
   },
   {
     id: "social", icon: "social", title: "Social Media Marketing",
@@ -1236,7 +1271,7 @@ const ServicesPage = ({ setPage }) => (
           Services That <span>Deliver Results</span>
         </h1>
         <p className="animate-fade-up delay-2" style={{ color: "rgba(255,255,255,0.6)", fontSize: "clamp(0.9rem,2vw,1.05rem)", maxWidth: 520, margin: "0 auto 2rem", fontWeight: 400 }}>
-          Five specialised disciplines, one unified goal: accelerating your brand's growth in the digital world.
+          Four specialised disciplines, one unified goal: accelerating your brand's growth in the digital world.
         </p>
         <div style={{ display: "flex", justifyContent: "center", gap: 8, flexWrap: "wrap" }}>
           {services.map(s => (
@@ -1269,7 +1304,7 @@ const ServicesPage = ({ setPage }) => (
         <div className="why-us-grid">
           {[
             { icon: "star", title: "Award-winning Team", desc: "Recognised by Economic Times and Gulf News for excellence." },
-            { icon: "ppc", title: "Data-Driven Decisions", desc: "Every strategy is backed by real data, not gut feels." },
+            { icon: "performance", title: "Data-Driven Decisions", desc: "Every strategy is backed by real data, not gut feels." },
             { icon: "check", title: "Transparent Reporting", desc: "You see everything. Real-time dashboards, no hidden metrics." },
             { icon: "clock", title: "Agile Execution", desc: "We move fast and adapt faster to market changes." },
           ].map((w, i) => (
@@ -1294,17 +1329,18 @@ const ServicesPage = ({ setPage }) => (
     </section>
   </div>
 );
+
 /* ─────────────────────────────────────────────
    FAQ PAGE
 ───────────────────────────────────────────── */
 const faqs = [
-  { q: "What digital marketing services does Ydigital offer?", a: "We offer a full suite of services including SEO, PPC Management, Influencer Marketing, Product Marketing, and Social Media Marketing. Each service is tailored to your brand's unique goals and audience." },
+  { q: "What digital marketing services does Ydigital offer?", a: "We offer a suite of services including SEO, Performance Marketing, Creators Marketing, and Social Media Marketing. Each service is tailored to your brand's unique goals and audience." },
   { q: "How long before I see results from SEO?", a: "SEO is a long-term investment. Most clients start seeing meaningful improvements in 3–6 months, with significant gains at the 6–12 month mark. We focus on sustainable, compounding growth rather than risky shortcuts." },
   { q: "Do you work with small businesses or only enterprises?", a: "We work with businesses of all sizes — from early-stage startups to Fortune 500 companies. Our strategies are always scaled to your budget and growth stage." },
-  { q: "How do you measure the success of campaigns?", a: "We track KPIs specific to each service: organic traffic and keyword rankings for SEO, ROAS and CTR for PPC, engagement rates for social media, and reach/EMV for influencer campaigns. You get full visibility via monthly reports." },
-  { q: "Can I choose just one service, or do I need a full package?", a: "You can absolutely start with a single service. Many clients begin with SEO or PPC and expand into other services as they see results. We'll recommend what makes most sense for your goals." },
+  { q: "How do you measure the success of campaigns?", a: "We track KPIs specific to each service: organic traffic and keyword rankings for SEO, ROAS and CTR for Performance Marketing, engagement rates for social media, and reach/EMV for creators campaigns. You get full visibility via monthly reports." },
+  { q: "Can I choose just one service, or do I need a full package?", a: "You can absolutely start with a single service. Many clients begin with SEO or Performance Marketing and expand into other services as they see results. We'll recommend what makes most sense for your goals." },
   { q: "What makes Ydigital different from other digital agencies?", a: "We combine deep data analytics with genuine creative strategy. We don't use cookie-cutter playbooks — every campaign is built from scratch for your brand. Plus, you always have a dedicated account manager who knows your business." },
-  { q: "How do you select influencers for campaigns?", a: "We vet influencers across three dimensions: audience authenticity (real followers, not bots), niche relevance (their audience matches yours), and past performance (engagement rate and conversion history)." },
+  { q: "How do you select creators for campaigns?", a: "We vet creators across three dimensions: audience authenticity (real followers, not bots), niche relevance (their audience matches yours), and past performance (engagement rate and conversion history)." },
   { q: "What is your minimum contract length?", a: "We offer month-to-month contracts for most services, though we recommend a minimum 3-month engagement for SEO to see meaningful results. We believe in earning your business every month, not locking you in." },
 ];
 
@@ -1396,7 +1432,7 @@ const FAQsPage = () => {
                     </div>
                     <div>
                       <label className="form-label">Subject</label>
-                      <input className="form-input" type="text" placeholder="e.g. About influencer pricing"
+                      <input className="form-input" type="text" placeholder="e.g. About creators pricing"
                         value={formData.subject} onChange={e => setFormData({ ...formData, subject: e.target.value })} />
                     </div>
                     <div>
@@ -1446,7 +1482,7 @@ const ContactPage = () => {
     }
   };
 
-  const services_list = ["SEO", "PPC Management", "Influencer Marketing", "Product Marketing", "Social Media", "Full Package"];
+  const services_list = ["SEO", "Performance Marketing", "Content Creation for Creators Marketing", "Social Media", "Full Package"];
   const budgets = ["< ₹50K/mo", "₹50K–2L/mo", "₹2L–5L/mo", "₹5L+/mo"];
 
   return (
@@ -1627,7 +1663,7 @@ const SharedFooter = ({ setPage }) => (
         </div>
 
         {[
-          { title: "Services", links: ["SEO", "PPC Management", "Influencer Mktg", "Product Mktg", "Social Media"] },
+          { title: "Services", links: ["SEO", "Performance Marketing", "Creators Mktg", "Social Media"] },
           { title: "Company", links: ["Home", "Services", "Blogs", "FAQs", "Contact"] },
           { title: "Contact", links: ["ydigital@gmail.com", "+91 85912 61258", "Khar, Mumbai"] },
         ].map(col => (
@@ -1674,7 +1710,6 @@ export default function App() {
     switch (activePage) {
       case "Home": return <HomePage setPage={setPage} />;
       case "Services": return <ServicesPage setPage={setPage} />;
-
       case "Blogs": return <BlogsPage />;
       case "FAQs": return <FAQsPage />;
       case "Contact": return <ContactPage />;
@@ -1692,6 +1727,9 @@ export default function App() {
         </main>
         {activePage !== "Contact" && <SharedFooter setPage={setPage} />}
       </div>
+
+      {/* Our newly added WhatsApp Widget */}
+      <WhatsAppWidget />
     </>
   );
 }

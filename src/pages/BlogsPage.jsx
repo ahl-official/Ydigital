@@ -22,9 +22,9 @@ const Icon = ({ name, size = 20, color = "currentColor" }) => {
 // ── Colour palette per category ──────────────────────────────
 const CATEGORY_COLORS = {
     "SEO": "#0057FF",
-    "PPC": "#FF6B1A",
+    "Performance": "#FF6B1A",
     "Social Media": "#DB2777",
-    "Influencer": "#7C3AED",
+    "Creators": "#7C3AED",
     "Growth Hacks": "#059669",
     "Case Studies": "#0057FF",
     "General": "#8892A4",
