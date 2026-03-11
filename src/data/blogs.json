@@ -1,3 +1,70 @@
 {
-    "blogs": []
+    "blogs": [
+        {
+            "id": "seo-tips-2025",
+            "title": "10 SEO Strategies That Actually Work in 2025",
+            "category": "SEO",
+            "author": "Riya Sharma",
+            "readTime": "8 min",
+            "excerpt": "Tired of SEO advice that's already outdated? Here are 10 strategies our team tested this year that drove real, measurable results.",
+            "body": "<p>Search engine optimisation in 2025 looks very different from what it did just two years ago. Google's AI-driven updates have shifted the goalposts — and most agencies are still playing the old game.</p><p>Here are the 10 strategies that consistently delivered results for our clients this year:</p><ul><li><strong>E-E-A-T signals</strong> — Experience, Expertise, Authoritativeness, Trust are now the backbone of content ranking.</li><li><strong>Topical authority clusters</strong> — Stop writing isolated blog posts. Build interconnected content hubs around your core topics.</li><li><strong>Core Web Vitals</strong> — Page speed and interaction responsiveness directly impact rankings. Audit monthly.</li><li><strong>Zero-click optimisation</strong> — Structure content to win featured snippets even if it means fewer clicks. It builds brand recall.</li><li><strong>Video SEO</strong> — YouTube is the second-largest search engine. Transcripts and chapters are now indexed by Google.</li></ul><p>The brands winning in organic search right now are the ones treating SEO as a long-term equity play, not a monthly checkbox.</p>",
+            "imageUrl": "https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?w=800&q=80",
+            "publishDate": "2025-06-15"
+        },
+        {
+            "id": "influencer-roi-guide",
+            "title": "The Definitive Guide to Measuring Influencer ROI",
+            "category": "Influencer",
+            "author": "Karan Mehta",
+            "readTime": "10 min",
+            "excerpt": "Most brands still measure influencer campaigns by likes. Here's the framework we use to track actual revenue impact.",
+            "body": "<p>Vanity metrics are killing influencer marketing budgets. When a brand pays ₹5 lakh for a campaign and measures success by total impressions, they're flying blind.</p><p>At Ydigital, we use a 4-layer ROI framework:</p><ul><li><strong>Layer 1 — Reach Quality:</strong> Audience overlap score, fake follower percentage, engagement authenticity rate.</li><li><strong>Layer 2 — Content Performance:</strong> Save rate (strongest intent signal on Instagram), share rate, comment sentiment.</li><li><strong>Layer 3 — Traffic Attribution:</strong> UTM-tagged links, promo codes, pixel-based tracking to measure site visits and signups.</li><li><strong>Layer 4 — Revenue Impact:</strong> Attributed conversions, Customer Acquisition Cost vs. blended CAC, Earned Media Value.</li></ul><p>The magic happens when you combine all four layers into a single campaign scorecard. That's when you stop guessing and start scaling what works.</p>",
+            "imageUrl": "https://images.unsplash.com/photo-1563986768609-322da13575f3?w=800&q=80",
+            "publishDate": "2025-06-22"
+        },
+        {
+            "id": "ppc-bidding-playbook",
+            "title": "PPC Bidding Strategies: Our 2025 Playbook",
+            "category": "PPC",
+            "author": "Neha Joshi",
+            "readTime": "7 min",
+            "excerpt": "Manual bidding is dead. Here's how we structure Google Ads campaigns in the age of Smart Bidding and Performance Max.",
+            "body": "<p>Google Ads in 2025 is less about keyword mastery and more about feeding the algorithm the right signals. Smart Bidding now controls 80% of auction decisions — your job is to steer it, not fight it.</p><p>Here's our current campaign structure for ecommerce clients:</p><ul><li><strong>Target ROAS campaigns</strong> for proven product categories with 30+ conversions/month.</li><li><strong>Target CPA campaigns</strong> for lead generation funnels with consistent conversion data.</li><li><strong>Maximize Conversions</strong> for new campaigns in the learning phase (first 4–6 weeks).</li><li><strong>Performance Max</strong> as a scaling layer once your Search campaigns are profitable — never as a starting point.</li></ul><p>Average ROAS improvement after our audit + restructure: 4.2x.</p>",
+            "imageUrl": "https://images.unsplash.com/photo-1611926653458-09294b3142bf?w=800&q=80",
+            "publishDate": "2025-07-01"
+        },
+        {
+            "id": "d2c-case-study",
+            "title": "Case Study: How We 3x'd a D2C Brand's Revenue in 6 Months",
+            "category": "Case Studies",
+            "author": "Ydigital Team",
+            "readTime": "12 min",
+            "excerpt": "A Mumbai-based skincare brand came to us with ₹80K/month in online revenue. Six months later they crossed ₹2.4 lakh. Here's exactly what we did.",
+            "body": "<p><strong>The Client:</strong> A bootstrapped D2C skincare brand based in Mumbai. Strong product, loyal offline customer base, almost zero digital presence.</p><p><strong>Results:</strong> Revenue grew from ₹80K to ₹2.4L/month. ROAS: 5.8x. Instagram following: 4,200 → 31,000.</p>",
+            "imageUrl": "https://images.unsplash.com/photo-1559136555-9303baea8ebd?w=800&q=80",
+            "publishDate": "2025-07-08"
+        },
+        {
+            "id": "social-media-algorithm-2025",
+            "title": "How Every Major Social Media Algorithm Works in 2025",
+            "category": "Social Media",
+            "author": "Priya Kapoor",
+            "readTime": "9 min",
+            "excerpt": "Instagram, LinkedIn, YouTube, and X have all updated their algorithms. Here's what's actually driving reach right now.",
+            "body": "<p>Platform algorithms are not mysteries — they're systems optimising for one thing: keeping users on the app as long as possible.</p><p><strong>Instagram:</strong> Reels get 3x the distribution of static posts. The algorithm heavily weights 'sends per reach'.</p><p><strong>LinkedIn:</strong> Comments beat reactions. Polls and carousels outperform text posts by 2x.</p><p><strong>YouTube:</strong> Click-through rate and watch time percentage are the two dominant signals.</p>",
+            "imageUrl": "https://images.unsplash.com/photo-1516251193007-45ef944ab0c6?w=800&q=80",
+            "publishDate": "2025-07-10"
+        },
+        {
+            "id": "product-launch-checklist",
+            "title": "The 30-Day Product Launch Checklist We Use for Every Client",
+            "category": "Growth Hacks",
+            "author": "Amit Desai",
+            "readTime": "6 min",
+            "excerpt": "Most product launches fail in the first 72 hours. This checklist is how we make sure ours don't.",
+            "body": "<p>A product launch is not a single event — it's a 30-day campaign.</p><ul><li><strong>30–15 days before:</strong> Build waitlist, brief influencers, set up tracking.</li><li><strong>14–3 days before:</strong> Tease on social, activate influencer content.</li><li><strong>Launch day:</strong> Go live at 10 AM, activate all paid campaigns simultaneously.</li><li><strong>Post-launch:</strong> Retarget, collect reviews, iterate daily.</li></ul><p>85% of our launches hit their Month 1 targets using this framework.</p>",
+            "imageUrl": "https://images.unsplash.com/photo-1533750349088-cd871a92f312?w=800&q=80",
+            "publishDate": "2025-07-12"
+        }
+    ]
 }

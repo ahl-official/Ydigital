@@ -1,5 +1,9 @@
 import { useState, useEffect, useRef } from "react";
 
+// In App.jsx, change:
+import BlogsPage from "./pages/BlogsPage";   // adjust path as needed
+
+// And in renderPage():
 /* ─────────────────────────────────────────────
    GLOBAL STYLES injected via <style> tag
 ───────────────────────────────────────────── */
@@ -1780,6 +1784,7 @@ export default function App() {
     switch (activePage) {
       case "Home": return <HomePage setPage={setPage} />;
       case "Services": return <ServicesPage setPage={setPage} />;
+
       case "Blogs": return <BlogsPage />;
       case "FAQs": return <FAQsPage />;
       case "Contact": return <ContactPage />;
