@@ -230,7 +230,7 @@ export default function BlogsPage() {
 
     // Load blogs.json at mount
     useEffect(() => {
-        fetch("/src/data/blogs.json")
+        fetch("/data/blogs.json")
             .then((r) => {
                 if (!r.ok) throw new Error("blogs.json not found (HTTP " + r.status + ")");
                 return r.json();
