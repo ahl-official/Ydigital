@@ -52,18 +52,18 @@ const BlogModal = ({ post, onClose }) => {
         <div
             onClick={onClose}
             style={{
-                position: "fixed", inset: 0, zIndex: 2000,
+                position: "fixed", top: 82, right: 0, bottom: 0, left: 0, zIndex: 900,
                 background: "rgba(5,14,31,0.75)", backdropFilter: "blur(6px)",
                 display: "flex", alignItems: "stretch", justifyContent: "center",
-                padding: 4,
+                padding: "4px",
             }}
         >
             <div
                 onClick={(e) => e.stopPropagation()}
                 style={{
                     background: "#fff", borderRadius: 8,
-                    width: "calc(100vw - 8px)",
-                    height: "calc(100vh - 8px)",
+                    width: "100%",
+                    height: "100%",
                     overflowY: "auto",
                     boxShadow: "0 20px 60px rgba(0,0,0,0.28)",
                 }}
@@ -90,7 +90,7 @@ const BlogModal = ({ post, onClose }) => {
                 </div>
 
                 {/* Content */}
-                <div style={{ padding: "clamp(1.1rem, 3vw, 2.5rem)" }}>
+                <div style={{ padding: "clamp(1.1rem, 3vw, 2.5rem)", maxWidth: 980, margin: "0 auto" }}>
                     <div style={{ display: "flex", alignItems: "center", gap: 10, flexWrap: "wrap", marginBottom: "1.2rem" }}>
                         <span style={{
                             background: `${color}15`, color,
