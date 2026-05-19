@@ -600,6 +600,10 @@ const Icon = ({ name, size = 20, color = "currentColor" }) => {
     location: <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" /><circle cx="12" cy="10" r="3" /></svg>,
     star: <svg width={size} height={size} viewBox="0 0 24 24" fill={color} stroke={color} strokeWidth="1.5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" /></svg>,
     clock: <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth="1.8" strokeLinecap="round"><circle cx="12" cy="12" r="10" /><polyline points="12 6 12 12 16 14" /></svg>,
+    instagram: <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5" /><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37Z" /><line x1="17.5" y1="6.5" x2="17.51" y2="6.5" /></svg>,
+    facebook: <svg width={size} height={size} viewBox="0 0 24 24" fill={color}><path d="M22 12.06C22 6.5 17.52 2 12 2S2 6.5 2 12.06c0 5.02 3.66 9.18 8.44 9.94v-7.03H7.9v-2.91h2.54V9.84c0-2.52 1.49-3.91 3.77-3.91 1.09 0 2.23.2 2.23.2v2.47h-1.26c-1.24 0-1.63.78-1.63 1.57v1.89h2.78l-.44 2.91h-2.34V22C18.34 21.24 22 17.08 22 12.06Z" /></svg>,
+    linkedin: <svg width={size} height={size} viewBox="0 0 24 24" fill={color}><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.95v5.66H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.61 0 4.28 2.38 4.28 5.47v6.27ZM5.32 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12Zm1.78 13.02H3.54V9H7.1v11.45Z" /></svg>,
+    twitter: <svg width={size} height={size} viewBox="0 0 24 24" fill={color}><path d="M18.9 2.5h3.35l-7.32 8.36 8.61 11.39H16.8l-5.28-6.9-6.04 6.9H2.12l7.83-8.95L1.7 2.5h6.91l4.77 6.31L18.9 2.5Zm-1.18 17.74h1.86L7.6 4.41H5.6l12.12 15.83Z" /></svg>,
   };
   return icons[name] || null;
 };
@@ -817,7 +821,7 @@ const HomePage = ({ setPage }) => {
     { icon: "social", label: "Social Media", color: "#DB2777" },
   ];
 
-  const clients = ["TechCorp", "BrandLab", "StartupX", "GrowthCo", "MediaHub", "DigitalPro", "BrandWave", "NovaTech"];
+  const clients = ["Aesthetic Solutions", "Alchemane", "American Hairline"];
 
   return (
     <div className="page-enter">
@@ -1087,9 +1091,9 @@ const HomePage = ({ setPage }) => {
           </div>
           <div className="testimonials-grid">
             {[
-              { text: "Ydigital transformed our online presence. Our organic traffic is up 300% in just 6 months.", name: "Vatsal Shah", role: "CEO, TechStartup", rating: 5 },
-              { text: "The Performance Marketing campaigns they ran had the best ROI we've ever seen. Truly data-driven experts.", name: "Priya Mehta", role: "Marketing Director", rating: 5 },
-              { text: "Young, dynamic, and incredibly competent. They feel like an extension of our own team.", name: "Amit Joshi", role: "Founder, BrandLab", rating: 5 },
+              { text: "Ydigital transformed our online presence. Our organic traffic is up 300% in just 6 months.", name: "Vatsal Shah", rating: 5 },
+              { text: "The Performance Marketing campaigns they ran had the best ROI we've ever seen. Truly data-driven experts.", name: "Priya Mehta", rating: 5 },
+              { text: "Young, dynamic, and incredibly competent. They feel like an extension of our own team.", name: "Amit Joshi", rating: 5 },
             ].map((t, i) => (
               <div key={i} className="card" style={{ padding: "1.8rem" }}>
                 <div style={{ display: "flex", gap: 3, marginBottom: "1rem" }}>
@@ -1100,10 +1104,7 @@ const HomePage = ({ setPage }) => {
                   <div style={{ width: 40, height: 40, borderRadius: "50%", background: "linear-gradient(135deg, #0057FF, #FF6B1A)", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
                     <span style={{ fontFamily: "var(--font-display)", fontWeight: 800, color: "#fff", fontSize: "0.85rem" }}>{t.name[0]}</span>
                   </div>
-                  <div>
-                    <div style={{ fontFamily: "var(--font-display)", fontWeight: 700, fontSize: "0.88rem", color: "var(--dark)" }}>{t.name}</div>
-                    <div style={{ fontSize: "0.75rem", color: "var(--grey)", fontWeight: 400 }}>{t.role}</div>
-                  </div>
+                  <div style={{ fontFamily: "var(--font-display)", fontWeight: 700, fontSize: "0.88rem", color: "var(--dark)" }}>{t.name}</div>
                 </div>
               </div>
             ))}
@@ -1450,8 +1451,8 @@ const FAQsPage = () => {
                 <div style={{ marginTop: "1.8rem", paddingTop: "1.4rem", borderTop: "1px solid #e8edf5" }}>
                   <p style={{ fontSize: "0.8rem", color: "var(--grey)", marginBottom: "0.7rem", fontWeight: 600 }}>Prefer to talk directly?</p>
                   <div style={{ display: "flex", flexDirection: "column", gap: "0.5rem" }}>
-                    <a href="tel:+918591261258" style={{ display: "flex", alignItems: "center", gap: 8, color: "var(--blue)", fontFamily: "var(--font-display)", fontWeight: 700, fontSize: "0.82rem", textDecoration: "none" }}>
-                      <Icon name="phone" size={14} color="var(--blue)" /> +91 85912 61258
+                    <a href="tel:+919930068840" style={{ display: "flex", alignItems: "center", gap: 8, color: "var(--blue)", fontFamily: "var(--font-display)", fontWeight: 700, fontSize: "0.82rem", textDecoration: "none" }}>
+                      <Icon name="phone" size={14} color="var(--blue)" /> +91 99300 68840
                     </a>
                     <a href="mailto:ydigital@gmail.com" style={{ display: "flex", alignItems: "center", gap: 8, color: "var(--blue)", fontFamily: "var(--font-display)", fontWeight: 700, fontSize: "0.82rem", textDecoration: "none" }}>
                       <Icon name="mail" size={14} color="var(--blue)" /> ydigital@gmail.com
@@ -1518,7 +1519,7 @@ const ContactPage = () => {
               {[
                 { icon: "location", label: "Address", value: "4Aesthetique Solutions, Satguru Shopping Centre, Khar, Mumbai" },
                 { icon: "mail", label: "Email", value: "ydigital@gmail.com", href: "mailto:ydigital@gmail.com" },
-                { icon: "phone", label: "Phone", value: "+91 85912 61258", href: "tel:+918591261258" },
+                { icon: "phone", label: "Phone", value: "+91 99300 68840", href: "tel:+919930068840" },
                 { icon: "clock", label: "Hours", value: "Mon–Sat, 9:00 AM – 6:00 PM" },
               ].map((item, i) => (
                 <div key={i} style={{ display: "flex", gap: 16, marginBottom: "1.4rem", alignItems: "flex-start" }}>
@@ -1646,18 +1647,23 @@ const SharedFooter = ({ setPage }) => (
             Mumbai's top-rated digital marketing agency engineering growth that compounds.
           </p>
           <div style={{ display: "flex", gap: 8, marginTop: "1.5rem", flexWrap: "wrap" }}>
-            {["T", "Li", "Ig", "Fb"].map((s, i) => (
-              <div key={i} style={{
+            {[
+              { icon: "twitter", label: "X", url: "https://x.com/" },
+              { icon: "linkedin", label: "LinkedIn", url: "https://www.linkedin.com/" },
+              { icon: "instagram", label: "Instagram", url: "https://www.instagram.com/" },
+              { icon: "facebook", label: "Facebook", url: "https://www.facebook.com/" },
+            ].map((social) => (
+              <a key={social.label} href={social.url} target="_blank" rel="noopener noreferrer" aria-label={social.label} style={{
                 width: 34, height: 34, borderRadius: 8, border: "1px solid rgba(255,255,255,0.15)",
                 display: "flex", alignItems: "center", justifyContent: "center", cursor: "pointer",
-                fontSize: "0.65rem", color: "rgba(255,255,255,0.5)", fontFamily: "var(--font-display)", fontWeight: 800,
+                color: "rgba(255,255,255,0.58)", textDecoration: "none",
                 transition: "all 0.2s",
               }}
                 onMouseEnter={e => { e.currentTarget.style.borderColor = "var(--blue)"; e.currentTarget.style.background = "rgba(0,87,255,0.2)"; }}
                 onMouseLeave={e => { e.currentTarget.style.borderColor = "rgba(255,255,255,0.15)"; e.currentTarget.style.background = "transparent"; }}
               >
-                {s}
-              </div>
+                <Icon name={social.icon} size={16} color="currentColor" />
+              </a>
             ))}
           </div>
         </div>
@@ -1665,7 +1671,7 @@ const SharedFooter = ({ setPage }) => (
         {[
           { title: "Services", links: ["SEO", "Performance Marketing", "Creators Mktg", "Social Media"] },
           { title: "Company", links: ["Home", "Services", "Blogs", "FAQs", "Contact"] },
-          { title: "Contact", links: ["ydigital@gmail.com", "+91 85912 61258", "Khar, Mumbai"] },
+          { title: "Contact", links: ["ydigital@gmail.com", "+91 99300 68840", "Khar, Mumbai"] },
         ].map(col => (
           <div key={col.title}>
             <h4 style={{ fontFamily: "var(--font-display)", fontWeight: 800, color: "#fff", fontSize: "0.78rem", marginBottom: "1.1rem", letterSpacing: "0.07em", textTransform: "uppercase" }}>{col.title}</h4>
@@ -1682,7 +1688,7 @@ const SharedFooter = ({ setPage }) => (
         ))}
       </div>
       <div style={{ borderTop: "1px solid rgba(255,255,255,0.08)", paddingTop: "1.5rem", textAlign: "center" }}>
-        <span style={{ fontSize: "0.78rem" }}>© 2025 Ydigital by <strong style={{ color: "var(--blue-light)" }}>4Aesthetique Solutions</strong>. All rights reserved.</span>
+        <span style={{ fontSize: "0.78rem" }}>@2026 by <strong style={{ color: "var(--blue-light)" }}>Ydigital</strong>.</span>
       </div>
     </div>
   </footer>
