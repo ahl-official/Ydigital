@@ -54,17 +54,18 @@ const BlogModal = ({ post, onClose }) => {
             style={{
                 position: "fixed", inset: 0, zIndex: 2000,
                 background: "rgba(5,14,31,0.75)", backdropFilter: "blur(6px)",
-                display: "flex", alignItems: "center", justifyContent: "center",
-                padding: "1.5rem",
+                display: "flex", alignItems: "stretch", justifyContent: "center",
+                padding: 4,
             }}
         >
             <div
                 onClick={(e) => e.stopPropagation()}
                 style={{
-                    background: "#fff", borderRadius: 20,
-                    maxWidth: 760, width: "100%",
-                    maxHeight: "90vh", overflowY: "auto",
-                    boxShadow: "0 32px 80px rgba(0,0,0,0.3)",
+                    background: "#fff", borderRadius: 8,
+                    width: "calc(100vw - 8px)",
+                    height: "calc(100vh - 8px)",
+                    overflowY: "auto",
+                    boxShadow: "0 20px 60px rgba(0,0,0,0.28)",
                 }}
             >
                 {/* Cover image */}
@@ -73,12 +74,12 @@ const BlogModal = ({ post, onClose }) => {
                         src={post.imageUrl || FALLBACK_IMG}
                         alt={post.title}
                         onError={(e) => { e.target.src = FALLBACK_IMG; }}
-                        style={{ width: "100%", height: 280, objectFit: "cover", borderRadius: "20px 20px 0 0", display: "block" }}
+                        style={{ width: "100%", height: "clamp(220px, 36vh, 340px)", objectFit: "cover", borderRadius: "8px 8px 0 0", display: "block" }}
                     />
                     <button
                         onClick={onClose}
                         style={{
-                            position: "absolute", top: 16, right: 16,
+                            position: "absolute", top: 12, right: 12,
                             width: 38, height: 38, borderRadius: "50%",
                             background: "rgba(0,0,0,0.5)", border: "none", cursor: "pointer",
                             display: "flex", alignItems: "center", justifyContent: "center",
@@ -89,7 +90,7 @@ const BlogModal = ({ post, onClose }) => {
                 </div>
 
                 {/* Content */}
-                <div style={{ padding: "2rem 2.2rem 2.5rem" }}>
+                <div style={{ padding: "clamp(1.1rem, 3vw, 2.5rem)" }}>
                     <div style={{ display: "flex", alignItems: "center", gap: 10, flexWrap: "wrap", marginBottom: "1.2rem" }}>
                         <span style={{
                             background: `${color}15`, color,
