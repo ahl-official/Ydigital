@@ -54,7 +54,7 @@ const BlogModal = ({ post, onClose }) => {
             style={{
                 position: "fixed", inset: 0, zIndex: 2000,
                 background: "rgba(5,14,31,0.75)", backdropFilter: "blur(6px)",
-                display: "flex", alignItems: "stretch", justifyContent: "center",
+                display: "flex", alignItems: "center", justifyContent: "center",
                 padding: "4px",
                 overflow: "hidden",
             }}
@@ -63,8 +63,8 @@ const BlogModal = ({ post, onClose }) => {
                 onClick={(e) => e.stopPropagation()}
                 style={{
                     background: "#fff", borderRadius: 8,
-                    width: "100%",
-                    height: "100%",
+                    width: "min(960px, calc(100vw - 8px))",
+                    maxHeight: "calc(100vh - 8px)",
                     display: "flex",
                     flexDirection: "column",
                     overflow: "hidden",
