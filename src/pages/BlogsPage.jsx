@@ -63,12 +63,13 @@ const BlogModal = ({ post, onClose }) => {
                 onClick={(e) => e.stopPropagation()}
                 style={{
                     background: "#fff", borderRadius: 8,
-                    width: "min(920px, calc(100vw - 8px))",
-                    height: "min(760px, calc(100vh - 104px))",
+                    width: "min(880px, calc(100vw - 8px))",
+                    height: "min(640px, calc(100vh - 128px))",
                     display: "flex",
                     flexDirection: "column",
                     overflow: "hidden",
                     boxShadow: "0 20px 60px rgba(0,0,0,0.28)",
+                    transform: "translateY(-24px)",
                 }}
             >
                 <div style={{ flex: 1, minHeight: 0, overflowY: "auto" }}>
@@ -78,7 +79,7 @@ const BlogModal = ({ post, onClose }) => {
                             src={post.imageUrl || FALLBACK_IMG}
                             alt={post.title}
                             onError={(e) => { e.target.src = FALLBACK_IMG; }}
-                            style={{ width: "100%", height: "clamp(180px, 28vh, 260px)", objectFit: "cover", borderRadius: "8px 8px 0 0", display: "block" }}
+                            style={{ width: "100%", height: "clamp(160px, 24vh, 220px)", objectFit: "cover", borderRadius: "8px 8px 0 0", display: "block" }}
                         />
                         <button
                             onClick={onClose}
