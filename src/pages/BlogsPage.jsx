@@ -5,6 +5,7 @@
 // ============================================================
 
 import { useState, useEffect } from "react";
+import { createPortal } from "react-dom";
 
 // ── Inline SVG icon helper (re-used from main App) ──────────
 const Icon = ({ name, size = 20, color = "currentColor" }) => {
@@ -48,11 +49,11 @@ const BlogModal = ({ post, onClose }) => {
 
     const color = categoryColor(post.category);
 
-    return (
+    const modal = (
         <div
             onClick={onClose}
             style={{
-                position: "fixed", top: 82, right: 0, bottom: 0, left: 0, zIndex: 900,
+                position: "fixed", inset: 0, zIndex: 2000,
                 background: "rgba(5,14,31,0.75)", backdropFilter: "blur(6px)",
                 display: "flex", alignItems: "center", justifyContent: "center",
                 padding: "4px",
@@ -69,7 +70,6 @@ const BlogModal = ({ post, onClose }) => {
                     flexDirection: "column",
                     overflow: "hidden",
                     boxShadow: "0 20px 60px rgba(0,0,0,0.28)",
-                    transform: "translateY(-24px)",
                 }}
             >
                 <div style={{ flex: 1, minHeight: 0, overflowY: "auto" }}>
@@ -147,6 +147,8 @@ const BlogModal = ({ post, onClose }) => {
             </div>
         </div>
     );
+
+    return createPortal(modal, document.body);
 };
 
 // ── Blog card ────────────────────────────────────────────────
