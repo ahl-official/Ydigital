@@ -71,30 +71,30 @@ const BlogModal = ({ post, onClose }) => {
                     boxShadow: "0 20px 60px rgba(0,0,0,0.28)",
                 }}
             >
-                {/* Cover image */}
-                <div style={{ position: "relative", flex: "0 0 auto" }}>
-                    <img
-                        src={post.imageUrl || FALLBACK_IMG}
-                        alt={post.title}
-                        onError={(e) => { e.target.src = FALLBACK_IMG; }}
-                        style={{ width: "100%", height: "clamp(220px, 36vh, 340px)", objectFit: "cover", borderRadius: "8px 8px 0 0", display: "block" }}
-                    />
-                    <button
-                        onClick={onClose}
-                        style={{
-                            position: "absolute", top: 12, right: 12,
-                            width: 38, height: 38, borderRadius: "50%",
-                            background: "rgba(0,0,0,0.5)", border: "none", cursor: "pointer",
-                            display: "flex", alignItems: "center", justifyContent: "center",
-                        }}
-                    >
-                        <Icon name="close" size={18} color="#fff" />
-                    </button>
-                </div>
-
-                {/* Content */}
                 <div style={{ flex: 1, minHeight: 0, overflowY: "auto" }}>
-                    <div style={{ padding: "clamp(1.1rem, 3vw, 2.5rem)", maxWidth: 980, margin: "0 auto" }}>
+                    {/* Cover image */}
+                    <div style={{ position: "relative" }}>
+                        <img
+                            src={post.imageUrl || FALLBACK_IMG}
+                            alt={post.title}
+                            onError={(e) => { e.target.src = FALLBACK_IMG; }}
+                            style={{ width: "100%", height: "clamp(200px, 34vh, 320px)", objectFit: "cover", borderRadius: "8px 8px 0 0", display: "block" }}
+                        />
+                        <button
+                            onClick={onClose}
+                            style={{
+                                position: "absolute", top: 12, right: 12,
+                                width: 38, height: 38, borderRadius: "50%",
+                                background: "rgba(0,0,0,0.5)", border: "none", cursor: "pointer",
+                                display: "flex", alignItems: "center", justifyContent: "center",
+                            }}
+                        >
+                            <Icon name="close" size={18} color="#fff" />
+                        </button>
+                    </div>
+
+                    {/* Content */}
+                    <div style={{ padding: "clamp(0.9rem, 2.2vw, 1.7rem)", maxWidth: 940, margin: "0 auto" }}>
                     <div style={{ display: "flex", alignItems: "center", gap: 10, flexWrap: "wrap", marginBottom: "1.2rem" }}>
                         <span style={{
                             background: `${color}15`, color,
