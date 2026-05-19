@@ -52,10 +52,11 @@ const BlogModal = ({ post, onClose }) => {
         <div
             onClick={onClose}
             style={{
-                position: "fixed", top: 82, right: 0, bottom: 0, left: 0, zIndex: 900,
+                position: "fixed", inset: 0, zIndex: 2000,
                 background: "rgba(5,14,31,0.75)", backdropFilter: "blur(6px)",
                 display: "flex", alignItems: "stretch", justifyContent: "center",
                 padding: "4px",
+                overflow: "hidden",
             }}
         >
             <div
@@ -64,12 +65,14 @@ const BlogModal = ({ post, onClose }) => {
                     background: "#fff", borderRadius: 8,
                     width: "100%",
                     height: "100%",
-                    overflowY: "auto",
+                    display: "flex",
+                    flexDirection: "column",
+                    overflow: "hidden",
                     boxShadow: "0 20px 60px rgba(0,0,0,0.28)",
                 }}
             >
                 {/* Cover image */}
-                <div style={{ position: "relative" }}>
+                <div style={{ position: "relative", flex: "0 0 auto" }}>
                     <img
                         src={post.imageUrl || FALLBACK_IMG}
                         alt={post.title}
@@ -90,7 +93,8 @@ const BlogModal = ({ post, onClose }) => {
                 </div>
 
                 {/* Content */}
-                <div style={{ padding: "clamp(1.1rem, 3vw, 2.5rem)", maxWidth: 980, margin: "0 auto" }}>
+                <div style={{ flex: 1, minHeight: 0, overflowY: "auto" }}>
+                    <div style={{ padding: "clamp(1.1rem, 3vw, 2.5rem)", maxWidth: 980, margin: "0 auto" }}>
                     <div style={{ display: "flex", alignItems: "center", gap: 10, flexWrap: "wrap", marginBottom: "1.2rem" }}>
                         <span style={{
                             background: `${color}15`, color,
@@ -133,10 +137,11 @@ const BlogModal = ({ post, onClose }) => {
                     )}
 
                     {/* Body — supports simple HTML or plain text */}
-                    <div
-                        style={{ color: "#050E1F", fontSize: "0.95rem", lineHeight: 1.85, fontWeight: 400 }}
-                        dangerouslySetInnerHTML={{ __html: post.body || "" }}
-                    />
+                        <div
+                            style={{ color: "#050E1F", fontSize: "0.95rem", lineHeight: 1.85, fontWeight: 400 }}
+                            dangerouslySetInnerHTML={{ __html: post.body || "" }}
+                        />
+                    </div>
                 </div>
             </div>
         </div>
