@@ -52,7 +52,7 @@ const BlogModal = ({ post, onClose }) => {
         <div
             onClick={onClose}
             style={{
-                position: "fixed", inset: 0, zIndex: 2000,
+                position: "fixed", top: 82, right: 0, bottom: 0, left: 0, zIndex: 900,
                 background: "rgba(5,14,31,0.75)", backdropFilter: "blur(6px)",
                 display: "flex", alignItems: "center", justifyContent: "center",
                 padding: "4px",
@@ -63,8 +63,8 @@ const BlogModal = ({ post, onClose }) => {
                 onClick={(e) => e.stopPropagation()}
                 style={{
                     background: "#fff", borderRadius: 8,
-                    width: "min(960px, calc(100vw - 8px))",
-                    maxHeight: "calc(100vh - 8px)",
+                    width: "min(920px, calc(100vw - 8px))",
+                    height: "min(760px, calc(100vh - 104px))",
                     display: "flex",
                     flexDirection: "column",
                     overflow: "hidden",
@@ -78,7 +78,7 @@ const BlogModal = ({ post, onClose }) => {
                             src={post.imageUrl || FALLBACK_IMG}
                             alt={post.title}
                             onError={(e) => { e.target.src = FALLBACK_IMG; }}
-                            style={{ width: "100%", height: "clamp(200px, 34vh, 320px)", objectFit: "cover", borderRadius: "8px 8px 0 0", display: "block" }}
+                            style={{ width: "100%", height: "clamp(180px, 28vh, 260px)", objectFit: "cover", borderRadius: "8px 8px 0 0", display: "block" }}
                         />
                         <button
                             onClick={onClose}
@@ -94,7 +94,7 @@ const BlogModal = ({ post, onClose }) => {
                     </div>
 
                     {/* Content */}
-                    <div style={{ padding: "clamp(0.9rem, 2.2vw, 1.7rem)", maxWidth: 940, margin: "0 auto" }}>
+                    <div style={{ padding: "clamp(0.85rem, 1.8vw, 1.35rem)", maxWidth: 900, margin: "0 auto" }}>
                     <div style={{ display: "flex", alignItems: "center", gap: 10, flexWrap: "wrap", marginBottom: "1.2rem" }}>
                         <span style={{
                             background: `${color}15`, color,
